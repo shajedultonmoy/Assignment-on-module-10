@@ -666,3 +666,35 @@ ubuntu@ip-10-0-3-165:~/Module-3-deployment$ curl localhost:8080
     <h1 class="hello-world">Roy</h1>
 </body>
 </html>ubuntu@ip-10-0-3-165:~/Module-3-deployment$ 
+ubuntu@ip-10-0-3-165:~/Module-3-deployment$ sudo docker-compose logs
+Attaching to nginx_server, express_web_app
+nginx_server | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_server | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx_server | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx_server | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx_server | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+nginx_server | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx_server | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_server | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx_server | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: using the "epoll" event method
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: nginx/1.31.2
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: OS: Linux 6.17.0-1017-aws
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: start worker processes
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: start worker process 29
+nginx_server | 2026/06/24 08:54:43 [notice] 1#1: start worker process 30
+nginx_server | 172.18.0.1 - - [24/Jun/2026:08:55:01 +0000] "GET / HTTP/1.1" 200 316 "-" "curl/8.5.0" "-"
+nginx_server | 103.189.237.32 - - [24/Jun/2026:08:55:12 +0000] "GET / HTTP/1.1" 200 316 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" "-"
+nginx_server | 103.189.237.32 - - [24/Jun/2026:08:55:12 +0000] "GET /styles.css HTTP/1.1" 200 768 "http://34.239.127.16:8080/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" "-"
+nginx_server | 103.189.237.32 - - [24/Jun/2026:08:55:12 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://34.239.127.16:8080/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" "-"
+nginx_server | 103.189.237.32 - - [24/Jun/2026:09:00:22 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" "-"
+nginx_server | 103.189.237.32 - - [24/Jun/2026:09:00:22 +0000] "GET /styles.css HTTP/1.1" 304 0 "http://34.239.127.16:8080/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" "-"
+express_web_app | 
+express_web_app | > node-express-app@1.0.0 start
+express_web_app | > node src/server.js
+express_web_app | 
+express_web_app | Server running on port 5000
+ubuntu@ip-10-0-3-165:~/Module-3-deployment$ 
+
